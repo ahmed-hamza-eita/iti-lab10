@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ITIlab10</string>
+    <string name="user_id">user id</string>
+    <string name="id">Id</string>
+    <string name="title">Title</string>
+    <string name="body">Body</string>
+    <string name="details">Details</string>
+    <string name="get_posts">Get posts</string>
+    <string name="name">Name</string>
+    <string name="e_mail">E-mail</string>
+</resources>
