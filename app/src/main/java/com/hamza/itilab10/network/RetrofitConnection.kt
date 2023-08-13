@@ -9,6 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitConnection {
 
    fun getRetrofit(baseUrl:String): ApiCalls {
+
         var interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         var okHttpClient = OkHttpClient.Builder().addInterceptor(interceptor).build()
 

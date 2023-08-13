@@ -10,6 +10,7 @@ import com.hamza.itilab10.databinding.ActivityLoginBinding
 import com.hamza.itilab10.databinding.ActivityMainBinding
 import com.hamza.itilab10.models.ModelLogin
 import com.hamza.itilab10.network.RetrofitConnection
+import com.hamza.itilab10.utils.MySharedPreferences
 import com.hamza.itilab10.utils.ProgressLoading
 import com.hamza.retofit_lab9.utils.Const
 import kotlinx.coroutines.launch
@@ -42,6 +43,8 @@ class LoginActivity : AppCompatActivity() {
         } else {
             ProgressLoading.show(this)
             login(email, password)
+            MySharedPreferences.setUserEmail(email)
+            MySharedPreferences.getBoolean(Const.LOGEDIN_KEY, true)
         }
     }
 
