@@ -10,11 +10,14 @@ object RetrofitConnection {
 
    fun getRetrofit(baseUrl:String): ApiCalls {
 
-        var interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-        var okHttpClient = OkHttpClient.Builder().addInterceptor(interceptor).build()
+       val interceptor = CustomInterceptor("Authorization", "Bearer your-token")
+       val client = OkHttpClient.Builder()
+           .addInterceptor(interceptor)
+           .build()
+
 
         val retrofit = Retrofit.Builder().baseUrl(baseUrl)
-            .client(okHttpClient)
+            .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
